@@ -1,0 +1,188 @@
+###Protein-Calculator###
+
+## importing regular expression ##
+import re
+
+## input for protein sequence, an input window appears when code is run ##
+protein = input("Paste your protein sequence here and press enter")
+
+## Protein sequences copyied from FASTA file may contain several spaces. Python can consider it as a character and give wrong results. 
+# This line of code helps to remove the spaces from the sequence.  
+protein=protein.strip().replace(' ','')
+
+print()
+
+##Number of amino acids in the sequence 
+
+number_of_AA=len(protein)
+print("\033[1m" + 'Number of Amino Acids:' + "\033[0m" ,number_of_AA)
+
+##Individual counts of amino acids in the sequence
+#Non-Polar Amino acids
+G=protein.count('G')
+A=protein.count('A')
+I=protein.count('I')
+L=protein.count('L')
+M=protein.count('M')
+W=protein.count('W')
+F=protein.count('F')
+P=protein.count('P')
+V=protein.count('V')
+
+#Polar Amino acids
+C=protein.count('C')
+S=protein.count('S')
+T=protein.count('T')
+Y=protein.count('Y')
+N=protein.count('N')
+Q=protein.count('Q')
+
+#Acidic Amino Acids (Negatively Charged)
+D=protein.count('D')
+E=protein.count('E')
+
+#Basic Amino Acids (Positively Charged)
+H=protein.count('H')
+K=protein.count('K')
+R=protein.count('R')
+
+
+protein_length= len(protein)
+
+
+##Calculating the percentage of individual amino acids present in the sequence.
+#Non-Polar Amino acids
+G_percentage= G/protein_length*100
+A_percentage= A/protein_length*100
+I_percentage= I/protein_length*100
+L_percentage= L/protein_length*100
+M_percentage= M/protein_length*100
+W_percentage= W/protein_length*100
+F_percentage= F/protein_length*100
+P_percentage= P/protein_length*100
+V_percentage= V/protein_length*100
+
+#Polar Amino acids
+C_percentage= C/protein_length*100
+S_percentage= S/protein_length*100
+T_percentage= T/protein_length*100
+Y_percentage= Y/protein_length*100
+N_percentage= N/protein_length*100
+Q_percentage= Q/protein_length*100
+
+#Acidic Amino Acids (Negatively Charged)
+D_percentage= D/protein_length*100
+E_percentage= E/protein_length*100
+
+#Basic Amino Acids (Positively Charged)
+H_percentage= H/protein_length*100
+K_percentage= K/protein_length*100
+R_percentage= R/protein_length*100
+
+print()
+
+## Heading 
+print("\033[1m" + 'Non_polar Amino acids' + "\033[0m")
+
+
+###Printing the results of individual numbers and percentage of the amino acids. Percentage is rounded to 2 decimal points.
+
+print("Glycine(Gly):", "Nos=", G, "Percentage=", round(G_percentage, 2) )
+print("Alanine(Ala):", "Nos=", A, "Percentage=",  round(A_percentage, 2) )
+print("Isoleucine(Ile):", "Nos=", I, "Percentage=",  round(I_percentage, 2) )
+print("Leucine(Leu):", "Nos=", L, "Percentage=",  round(L_percentage, 2) )
+print("Methionine(Met):", "Nos=", M, "Percentage=",  round(M_percentage, 2) )
+print("Tryptophan(Trp):", "Nos=", W, "Percentage=",  round(W_percentage, 2) )
+print("Phenylalanine(Phe):", "Nos=", F, "Percentage=",  round(F_percentage, 2) )
+print("Proline(Pro):", "Nos=", P, "Percentage=",  round(P_percentage, 2) )
+print("Valine(Val):", "Nos=", V, "Percentage=",  round(V_percentage, 2) )
+
+print()
+
+print("\033[1m" + 'Polar Amino acids' + "\033[0m")
+
+print("Cysteine(Cys):", "Nos=", C, "Percentage=",  round(C_percentage, 2) )
+print("Serine(Ser):", "Nos=", S, "Percentage=",  round(S_percentage, 2) )
+print("Threonine(Thr):", "Nos=", T, "Percentage=",  round(T_percentage, 2) )
+print("Tyrosine(Tyr):", "Nos=", Y, "Percentage=",  round(Y_percentage, 2) )
+print("Asparagine(Asn):", "Nos=", N, "Percentage=",  round(N_percentage, 2) )
+print("Glutamine(Gln):", "Nos=", Q, "Percentage=",  round(Q_percentage, 2) )
+
+print()
+
+print("\033[1m" + 'Acidic Amino Acids (Negatively Charged)' + "\033[0m")
+
+print("Aspartate(Asp):", "Nos=", D, "Percentage=",  round(D_percentage, 2) )
+print("Glutamate(Glu):", "Nos=", E, "Percentage=",  round(E_percentage, 2) )
+
+print()
+
+print("\033[1m" + 'Basic Amino Acids (Positively Charged)' + "\033[0m")
+
+print("Histidine(His):", "Nos=", H, "Percentage=",  round(H_percentage, 2) )
+print("Lysine(Lys):", "Nos=", K, "Percentage=",  round(K_percentage, 2) )
+print("Arginine(Arg):", "Nos=", R, "Percentage=",  round(R_percentage, 2) )
+
+print()
+
+## Addition for the total nos of amino acids precent in each classification 
+
+print ("\033[1m" + 'Summary' + "\033[0m")
+print("Total number of Non-Polar Amino acids:", G+A+I+L+M+W+F+P+V)
+print("Total number of Polar Amino acids:", C+S+T+Y+N+Q)
+print("Total number of Negatively Charged Amino acids:", D+E)
+print("Total number of Positively Charged Amino acids:", H+K+R)
+
+print()
+
+##Calculating the molecular weight of the protein. The average weight of each amino acids are multiplied with the nos of same residues present in the sequence and sum.
+
+Molecular_weight= (G*57.0519)+(A*71.0788)+(I*113.1594)+(L*113.1594)+(M*131.1926)+(W*186.2132)+(F*147.1766)+(P*97.1167)+(V*99.1326)+(C*103.1388)+(S*87.0782)+(T*101.1051)+(Y*163.1760)+(N*114.1038)+(Q*128.1307)+(D*115.0886)+(E*129.1155)+(H*137.1411)+(K*128.1741)+(R*156.1875)
+MW_rounded=round(Molecular_weight,2)
+print("\033[1m" + 'Molecular Weight of the protein in Dalton(Da):' + "\033[0m",MW_rounded)
+
+print()
+
+##Calculating the GRAVY scores of the protein. The average hydropathy score of each amino acids are multiplied with the nos of same residues present in the sequence and sum.
+
+GRAVY= (((G*-0.400)+(A*1.800)+(I*4.500)+(L*3.800)+(M*1.900)+(W*-0.900)+(F*2.800)+(P*-1.600)+(V*4.200)+(C*2.500)+(S*-0.800)+(T*-0.700)+(Y*-1.300)+(N*-3.500)+(Q*-3.500)+(D*-3.500)+(E*-3.500)+(H*-3.200)+(K*-3.900)+(R*-4.500))/number_of_AA )
+GRAVY_rounded=round(GRAVY,4)
+print("\033[1m" + 'Grand average of hydropathicity (GRAVY):' + "\033[0m", GRAVY_rounded)
+
+print()
+
+## Indexing for position of individual amino acid present in the sequence. 
+
+def index_all(X, OO):
+    OO= '*'+OO
+    return [m.start() for m in re.finditer(X, OO)]
+
+print ("\033[1m" + 'Possible Post Translational Modifications sites' + "\033[0m")
+
+## Indexing  Glycosylation sites i) N-glycosylation of asparagine residues and ii) O-glycosylation of serine and threonine residues
+
+print ("\033[1m" + 'Glycosylation sites' + "\033[0m")
+
+print ("N- Glycosylation: Asparagine(N) Position=" , index_all('N', protein))
+print ("O- Glycosylation: Serine(S) Position=" , index_all('S', protein))
+print ("O- Glycosylation: Threonine(T) Position=" , index_all('T', protein))
+       
+print()
+
+## Indexing  Phosphorylation sites in serine, threonine and tyrosine
+
+print ("\033[1m" + 'Phosphorylation sites' + "\033[0m")
+
+print ("Serine(S) Position=" , index_all('S', protein))
+print ("Threonine(T) Position=", index_all('T', protein))
+print ("Tyrosine(Y) Position=", index_all('Y', protein))
+       
+print()
+
+## Indexing  Methylation sites at lysine and arginine residues
+
+print ("\033[1m" + 'Methylation sites' + "\033[0m")
+print ("Lysine(K) Position=" , index_all('K', protein))
+print ("Arginine(R) Position=", index_all('R', protein))
+
+###End###
