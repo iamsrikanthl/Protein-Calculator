@@ -4,7 +4,7 @@ Protein-Calculator is a simple program that can be used to compute various prope
 
 To Run:
 1. Run the code normally as python script. 
-2. Obtain the protein sequences form Protein NCBI database(https://www.ncbi.nlm.nih.gov/protein), Protein data bank (https://www.rcsb.org/) or any protein sequence database. Retrieve the protein sequence in FASTA format. 
+2. Obtain the protein sequences form Protein NCBI database(https://www.ncbi.nlm.nih.gov/protein), Protein data bank (https://www.rcsb.org/) or any protein sequence database. Retrieve the protein sequence in FASTA format. Or Use sample data(FASTA sequences in main directory) 
 3. Paste the protein sequence obtained in FASTA format at the input cell when asked and press enter (Paste only the protein sequence and remove the identifier header of the FASTA file in the input).
 4. Reading the results.
    The successful execution of the code will give following results. 
