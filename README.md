@@ -12,5 +12,5 @@ To Run:
    b) Classification of Amino acids as Non polar Amino acids, polar Amino acids, Acidic Amino Acids, Basic Amino Acids and their details.
    c) Summary of amino acid composition
    d) Molecular Weight of the protein in Dalton(Da)
-   e) Grand average of hydropathicity (GRAVY) scores
+   e) Grand average of hydropathicity (GRAVY) scores.
    f) Possible Post Translational Modifications sites as Glycosylation sites, Phosphorylation sites and Methylation sites
