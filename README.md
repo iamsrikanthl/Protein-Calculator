@@ -8,9 +8,9 @@ To Run:
 3. Paste the protein sequence obtained in FASTA format at the input cell when asked and press enter (Paste only the protein sequence and remove the identifier header of the FASTA file in the input).
 4. Reading the results.
    The successful execution of the code will give following results. 
-   a) Number of Amino Acids
+   a) Number of Amino Acids.
    b) Classification of Amino acids as Non polar Amino acids, polar Amino acids, Acidic Amino Acids, Basic Amino Acids and their details.
-   c) Summary of amino acid composition
-   d) Molecular Weight of the protein in Dalton(Da)
+   c) Summary of amino acid composition.
+   d) Molecular Weight of the protein in Dalton(Da).
    e) Grand average of hydropathicity (GRAVY) scores.
-   f) Possible Post Translational Modifications sites as Glycosylation sites, Phosphorylation sites and Methylation sites
+   f) Possible Post Translational Modifications sites as Glycosylation sites, Phosphorylation sites and Methylation sites.
